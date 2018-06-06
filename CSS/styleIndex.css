@@ -1,0 +1,64 @@
+
+.bg{
+    
+    background-image: url(../img/exercicio-fisico-faz-bem-medis.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    margin-left: 15%;
+    width: 65%;
+    
+}
+
+.navbar{
+    margin-top: 2%;
+}
+
+.btn{
+    margin-top: 3%;
+    float: right;
+    color: black;
+    border-radius: 0 0 0 0;
+    font-weight: bolder;
+    background-color: white;
+    border-color: white;
+}
+
+.btn:hover{
+    margin-top: 3%;
+    float: right;
+    color: white;
+    border-radius: 0 0 0 0;
+    font-weight: bolder;
+    background-color: black;
+    border-color: white;
+}
+
+.btn:focus{
+    margin-top: 3%;
+    float: right;
+    color: white;
+    border-radius: 0 0 0 0;
+    font-weight: bolder;
+    background-color: black;
+    border-color: white;
+}
+
+
+
+.navbar-brand{
+
+    padding: 0%;
+    zoom: 200%;
+}
+
+
+section{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
