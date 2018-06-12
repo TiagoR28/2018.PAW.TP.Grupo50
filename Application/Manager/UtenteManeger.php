@@ -5,11 +5,11 @@
 require_once (Conf::getApplicationDatabasePath() . 'MyDataAccessPDO.php');
 require_once (Conf::getApplicationModelPath() . 'Utente.php');
 
-class StudentManager extends MyDataAccessPDO{
+class UtenteManager extends MyDataAccessPDO{
     
     const SQL_TABLE_NAME = 'utente';
     
-    public function getStudents($convertRecordToObject = false){
+    public function getUtentes($convertRecordToObject = false){
         try{
             $results = $this->getRecords(self::SQL_TABLE_NAME, null,
                                             array('utente.nome DESC, utente.idade'));

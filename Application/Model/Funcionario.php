@@ -2,11 +2,12 @@
 require_once (realpath(dirname( __FILE__ )) . '/../../Config.php');
 use Config as Conf;    
 
-class Utente {
+class Funcionario {
     
     private $id;
     private $nome;
     private $tipo;
+    private $password;
     private $genero;
     private $morada;
     
@@ -22,6 +23,10 @@ class Utente {
         return $this->tipo;
     }  
     
+    public function getPassword(){
+        return $this->password;
+    }  
+
     public function getGenero(){
         return $this->genero;
     } 
@@ -41,6 +46,10 @@ class Utente {
     public function settipo($value){        
         $this->tipo = $value;
     }    
+
+    public function setPassword($value){        
+        $this->password = $value;
+    }
     
     public function setGenero($value){        
         $this->genero = $value;
@@ -54,6 +63,7 @@ class Utente {
         $data = array(  'id' => $this->getId(), 
                         'nome' => $this->getNome(),
                         'tipo' => $this->gettipo(),
+                        'password' => $this->getPassword(),
                         'genero' => $this->getGenero(),
                         'morada' => $this->getMorada());        
         
@@ -61,14 +71,15 @@ class Utente {
     }
     
     public static function convertArrayToObject(Array &$data){
-        return self::createObject($data['id'], $data['nome'], $data['tipo'], $data['genero'], $data['morada']);
+        return self::createObject($data['id'], $data['nome'], $data['tipoFunc'], $data['password'], $data['genero'], $data['morada']);
     }    
     
-    public static function createObject($id, $nome, $tipo, $genero, $morada){
+    public static function createObject($id, $nome, $tipo, $password $genero, $morada){
         $Funcionario = new Funcionario();
         $Funcionario->setId($id);
         $Funcionario->setNome($nome);
         $Funcionario->settipo($tipo);
+        $Funcionario->setPassword($password);
         $Funcionario->setGenero($genero);
         $Funcionario->setMorada($morada);
         

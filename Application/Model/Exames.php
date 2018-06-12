@@ -2,7 +2,7 @@
 require_once (realpath(dirname( __FILE__ )) . '/../../Config.php');
 use Config as Conf;    
 
-class exames {
+class Exames {
     
     private $idmedico;
     private $idconsulta;
