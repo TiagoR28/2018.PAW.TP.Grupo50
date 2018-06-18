@@ -47,7 +47,7 @@ header {
 }
 
 .nav{
-    margin-top: 5%; 
+    margin-top: 1%; 
     float: left;
 }
 
@@ -129,6 +129,3 @@ section{
 .form-check{
     margin-bottom: 1%;
 }
-
-
-
