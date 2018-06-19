@@ -119,13 +119,29 @@ section{
     clear: both;
 }
 
-#genero{
-    display: inline-block;
-    text-align: center;
-    margin-right: 15%;
-    font: bold 120% serif;
-}
-
 .form-check{
     margin-bottom: 1%;
 }
+
+#estado{
+    display: inline-block;
+    text-align: center;
+    margin-right: 1%;
+    margin-left: 6%;
+    font: bold 120% serif;
+}
+
+#exames{
+    display: inline-block;
+    text-align: center;
+    margin-right: 1%;
+    margin-left: 3%;
+    font: bold 120% serif;
+}
+
+#exExames{
+    margin-top: 0%;
+}
+
+
+
