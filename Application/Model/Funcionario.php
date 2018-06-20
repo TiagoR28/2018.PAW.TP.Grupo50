@@ -74,7 +74,7 @@ class Funcionario {
         return self::createObject($data['id'], $data['nome'], $data['tipoFunc'], $data['password'], $data['genero'], $data['morada']);
     }    
     
-    public static function createObject($id, $nome, $tipo, $password $genero, $morada){
+    public static function createObject($id, $nome, $tipo, $password, $genero, $morada){
         $Funcionario = new Funcionario();
         $Funcionario->setId($id);
         $Funcionario->setNome($nome);

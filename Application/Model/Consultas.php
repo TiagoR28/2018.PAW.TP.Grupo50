@@ -65,10 +65,10 @@ class Consultas {
     public function convertObjectToArray(){
         $data = array(  'Id' => $this->getId(), 
                         'nome' => $this->getNome(),
-                        'estado' => $this->getestado()), 
-                        'entrada' => $this->getentrada()),
-                        'saida' => $this->getsaida()),
-                        'limiteespera' => $this->getlimiteespera()),
+                        'estado' => $this->getestado(), 
+                        'entrada' => $this->getentrada(),
+                        'saida' => $this->getsaida(),
+                        'limiteespera' => $this->getlimiteespera(),
                         'idHospital' => $this->getidHospital()); 
         
         return $data;

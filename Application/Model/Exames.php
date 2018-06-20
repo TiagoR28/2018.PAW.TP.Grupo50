@@ -25,9 +25,6 @@ class Exames {
     public function getobservacoes(){
         return $this->observacoes;
     } 
-
-    
-    } 
     
     public function setidmedico($value){        
         $this->idmedico = $value;        
@@ -51,7 +48,7 @@ class Exames {
         $data = array(  'idmedico' => $this->getidmedico(), 
                         'idconsulta' => $this->getidconsulta(),
                         'tipo' => $this->gettipo(),
-                        'observacoes' => $this->getobservacoes();
+                        'observacoes' => $this->getobservacoes());
                                
         
         return $data;

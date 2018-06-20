@@ -37,4 +37,8 @@ class Config {
     public static function getApplicationUtilsPath(){
         return self::getApplicationPath() . '/Utils/';
     }    
+    
+    public static function getApplicationValidarPath(){
+        return self::getApplicationPath() . '/Validar/';
+    }  
 }

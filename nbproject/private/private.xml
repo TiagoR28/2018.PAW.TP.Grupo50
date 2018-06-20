@@ -2,7 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
         <group name="PAW_EpN"/>
+        <group>
+            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/Config.php</file>
+            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/Application/View/adicionarUtente.php</file>
+            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/Application/Validar/ValidarUtente.php</file>
+        </group>
     </open-files>
 </project-private>
