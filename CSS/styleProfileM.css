@@ -143,5 +143,13 @@ section{
     margin-top: 0%;
 }
 
+#internamento{
+    display: inline-block;
+    text-align: center;
+    margin-right: 1%;
+    margin-left: 6%;
+    font: bold 120% serif;
+}
+
 
 
