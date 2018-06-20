@@ -5,8 +5,10 @@
         <group name="PAW_EpN"/>
         <group>
             <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/Config.php</file>
-            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/Application/View/adicionarUtente.php</file>
-            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/Application/Validar/ValidarUtente.php</file>
+            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/index.php</file>
+            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/login.html</file>
+            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/index.html</file>
+            <file>file:/C:/Users/hugo_/Documents/Trabalho%20Pratico%20EPN%20PAW/2018.PAW.TP.Grupo50/perfilMedic.php</file>
         </group>
     </open-files>
 </project-private>

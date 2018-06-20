@@ -17,9 +17,9 @@ and open the template in the editor.
     </head>
     <body>
         <?php   
-            $m = new StudentManager();
-            
-            print_r($m->getStudents(true));            
+//            $m = new StudentManager();
+//            
+//            print_r($m->getStudents(true));            
             
         ?>
     </body>
