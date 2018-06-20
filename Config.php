@@ -14,10 +14,6 @@ class Config {
     const SGBD_USERNAME = 'root';
     const SGBD_PASSWORD = '';
     
-    public static function getImagesPathBase(){
-        return realpath(dirname( __FILE__ )) . IMAGES_FOLDER;
-    }
-    
     public static function getApplicationPath(){
         return realpath(dirname( __FILE__ )) . '/Application/';
     }
@@ -41,4 +37,16 @@ class Config {
     public static function getApplicationValidarPath(){
         return self::getApplicationPath() . '/Validar/';
     }  
+    
+    public static function getApplicationCSSPath(){
+        return '../CSS/';
+    } 
+    
+    public static function getApplicationBootstrapPath(){
+        return '../CSS/bootstrap-3.3.7-dist/css/';
+    } 
+    
+    public static function getApplicationImagePath(){
+        return '../img/';
+    }
 }
