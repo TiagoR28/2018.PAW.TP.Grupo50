@@ -42,19 +42,19 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="mensagem">Data de Nascimento:</label>
                     <div class="col-sm-5">
-                        <input type="date" class="form-control" name="bday" max="2000-01-02" min="1979-12-31">
+                        <input type="date" class="form-control" name="bday" max="<?= $now = date('y-m-d') ?>" min="1900-01-01">
                     </div>
                 </div>
                 <div class="form-check col-sm-4 ">
                     <span id="genero">Genero:</span>
                     <label>
-                        <input type="radio" id="M" name="radio">
+                        <input type="radio" id="M" name="radio" value="M" checked="<?= ($generos == 'M') ? TRUE : FALSE ?>">
                         <span class="label-text">Masculino</span>
                     </label>
                 </div>
                 <div class="form-check col-sm-2">
                     <label>
-                        <input type="radio" id="F" name="radio">
+                        <input type="radio" id="F" name="radio" value="F" checked="<?= ($generos == 'M') ? FALSE : TRUE ?>">
                         <span class="label-text">Feminino</span>
                     </label>
                 </div>

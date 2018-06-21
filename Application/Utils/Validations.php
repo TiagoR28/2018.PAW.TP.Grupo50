@@ -12,6 +12,7 @@
  * @author jam
  */
 class Validations {
+
     private $mandatori = 'O campo é obrigatorio';
 
     public static function isInteger($value) {
@@ -24,7 +25,7 @@ class Validations {
 
     public static function validateString($string, $minSize, $maxSize) {
         $erro = NULL;
-        
+
         if (empty($string)) {
             $erro = 'O campo é obrigatorio';
         } else {
@@ -34,21 +35,44 @@ class Validations {
         }
         return $erro;
     }
-    
+    /**
+     * 
+     * @param type $date
+     * @return string
+     * @note Tem bugs 
+     */
     public static function validateDate($date) {
         $erro = NULL;
-        $max = '2018-01-01';
-        $min = '1900-01-01';
         $format = 'Y-m-d';
-        
-        
-        if (!$aux = DateTime::createFromFormat($format, $date)) {
+        $min = DateTime::createFromFormat($format, '1900-01-01');
+        $aux = DateTime::createFromFormat($format, $date);
+        $now = date($format);
+        if (!$aux instanceof DateTime) {
             $erro = 'O campo é obrigatorio';
         } else {
-            if(strtotime($date) > strtotime($max) || strtotime($date) < strtotime($min)) {
-                $erro = 'O campo deve estar entre os anos 1900 e 2018';
+            if ($aux < $min || $aux < $now) {
+                $erro = 'O campo deve estar entre o ano 1900 e a data autal';
             }
         }
         return $erro;
     }
+    /**
+     * 
+     * @param type $valor
+     * @param type $array
+     */
+    public static function validateRadio($valor, $array) {
+        $cont = 0;
+        $erro = NULL;
+     
+        foreach ($array as $key => $value) {
+            if ($valor == $value) {
+                $cont++;
+            }
+        }
+        if ($cont != 1) {
+            $erro = 'O campo é obrigatorio';
+        }
+    }
+
 }
