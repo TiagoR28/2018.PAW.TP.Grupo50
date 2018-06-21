@@ -1,8 +1,6 @@
 <?php
 require_once (realpath(dirname( __FILE__ )) . '/../../Config.php');
 use Config as Conf;    
-
-require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,8 +9,8 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../../CSS/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href="../../CSS/styleProfileM.css" type="text/css" rel="stylesheet">
+    <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
+    <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileR.css' ?>" type="text/css" rel="stylesheet">
 
     <title>MedCare Consultas</title>
 </head>
@@ -22,7 +20,7 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
         <nav class="navbar navbar-tranparent">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <img class="navbar-brand" src="../../img/mRFd2kaT_400x400.png" alt="LOGO"></img>
+                    <img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . 'mRFd2kaT_400x400.png' ?>" alt="LOGO"></img>
                 </div>
                 <button onclick="location.href='index.html';" class="btn btn-danger navbar-btn">LogOut</button>
             </div>

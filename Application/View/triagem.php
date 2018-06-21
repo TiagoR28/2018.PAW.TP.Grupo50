@@ -1,6 +1,7 @@
 <?php
-require_once (realpath(dirname( __FILE__ )) . '/../../Config.php');
-use Config as Conf;    
+require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
+
+use Config as Conf;
 
 require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
 ?>
@@ -14,7 +15,7 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
     <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
     <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileR.css' ?>" type="text/css" rel="stylesheet">
 
-    <title>MedCare Exames</title>
+    <title>MedCare Triagem</title>
 </head>
 
 <body>
@@ -29,7 +30,7 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
         </nav>
     </header>
     <section>
-        <h1>EXAMES</h1>
+        <h1>TRIAGEM</h1>
         <form class="form-horizontal" action="" method="GET">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="numberProcess">Numero do Processo:</label>
@@ -37,28 +38,44 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
                     <input type="int" class="form-control" id="numeroProcesso" min="1" max="999999" placeholder="123456">
                 </div>
             </div>
-            
-<!--adicionar mais exames se necessario e alterar o nome-->
-            
+
             <div class="form-group">
-                <div class="form-check col-sm-6">
-                    <span id="estado">Exames:</span>
-                    <div class="checkbox checkbox-inline">
+                <div class="form-check col-sm-6  ">
+                    <span id="estado">Estado:</span>
+                    <div class="radio radio-inline">
                         <label>
-                            <input type="checkbox" id="exameX" name="tipoExame" value="exameX">
-                            <span class="label-text">exameX</span>
+                            <input type="radio" id="verde" name="estado" value="verde">
+                            <span class="label-text">Verde</span>
                         </label>
                     </div>
-                    <div class="checkbox checkbox-inline">
+                    <div class="radio radio-inline">
                         <label>
-                            <input type="checkbox" id="exameY" name="tipoExame" value="exameY">
-                            <span class="label-text">exameY</span>
+                            <input type="radio" id="amarelo" name="estado" value="amarelo">
+                            <span class="label-text">Amarelo</span>
                         </label>
                     </div>
-                    <div class="checkbox checkbox-inline">
+                    <div class="radio radio-inline">
                         <label>
-                            <input type="checkbox" id="exameZ" name="tipoExame" value="exameZ">
-                            <span class="label-text">exameZ</span>
+                            <input type="radio" id="vermelho" name="estado" value="vermelho">
+                            <span class="label-text">Vermelho</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check col-sm-6  ">
+                    <span id="exames">Exames:</span>
+                    <button id="exExames" type="submit" class="btn btn-default">Fazer Exames</button>
+                    <div class="radio radio-inline">
+                        <label>
+                            <input type="radio" id="jaTem" name="exames" value="jaTem">
+                            <span class="label-text">Ja Tem</span>
+                        </label>
+                    </div>
+                    <div class="radio radio-inline">
+                        <label>
+                            <input type="radio" id="nao" name="exames" value="nao">
+                            <span class="label-text">Não</span>
                         </label>
                     </div>
                 </div>

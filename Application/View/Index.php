@@ -1,0 +1,38 @@
+<?php
+require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
+
+use Config as Conf;
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
+  <link href="<?= Conf::getApplicationCSSPath() . 'styleIndex.css' ?>" type="text/css" rel="stylesheet">
+  <title>MedCare</title>
+</head>
+
+<body class="bg">
+
+  <header>
+    <nav class="navbar navbar-transparent">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . 'mRFd2kaT_400x400.png' ?>" alt="LOGO"></img>
+        </div>
+        <button onclick="location.href='login.html';" class="btn btn-danger navbar-btn" href="../login.html">LogIn</button>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <h1>MEDCARE</h1>
+
+
+  </section>
+
+</body>
+
+</html>
