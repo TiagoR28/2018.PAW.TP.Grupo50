@@ -1,6 +1,6 @@
 header {
-    margin-left: 15%;
-    width: 65%;
+    margin-left: 10%;
+    width: 80%;
     
 }
 
@@ -47,7 +47,7 @@ header {
 }
 
 .nav{
-    margin-top: 5%; 
+    margin-top: -3%; 
     float: left;
 }
 
@@ -109,31 +109,3 @@ p{
 section{
     text-align: center;
 }
-
-
-.form-horizontal{
-    margin:5% 0% 0% 20%;
-}
-
-.form-group{
-    clear: both;
-}
-
-#genero{
-    display: inline-block;
-    text-align: center;
-    margin-right: 15%;
-    margin-left: 9%;
-    font: bold 120% serif;
-    
-}
-
-
-
-.form-check{
-    margin-bottom: 1%;
-
-}
-
-
-

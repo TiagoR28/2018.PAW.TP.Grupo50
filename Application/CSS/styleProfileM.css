@@ -151,5 +151,33 @@ section{
     font: bold 120% serif;
 }
 
+#estadoInternamento{
+    display: inline-block;
+    text-align: center;
+    margin-right: 5%;
+    font: bold 120% serif;
+}
 
 
+#contInter{
+    padding-left: 15px;
+    text-align: center;
+}
+
+.row{
+    margin-top: 3%;
+    
+}
+
+#titulos{
+    font: bold 190% serif;
+    border-bottom: solid;
+}
+
+#atender{
+    margin-left: 1%; 
+}
+
+#coluna{
+    margin-top: 1%;
+}

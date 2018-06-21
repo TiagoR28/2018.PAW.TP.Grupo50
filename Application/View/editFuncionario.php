@@ -15,7 +15,7 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
         <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
         <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileR.css' ?>" type="text/css" rel="stylesheet">
         
-        <title>MedCare Adicionar Utente</title>
+        <title>MedCare Editar Funcionario</title>
     </head>
 
     <body>
@@ -30,42 +30,20 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
             </nav>
         </header>
         <section>
-            <h1>ADICIONAR UTENTE</h1>
+            <h1>EDITAR FUNCIONARIO</h1>
             <form class="form-horizontal" action="" method="GET">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Nome:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" id="nome" name ="nome" placeholder="Insira o Nome" value="<?= (isset($nome)) ? $nome : ''; ?>">
+                        <input type="text" class="form-control" id="nome" name ="nome" placeholder="Insira o Nome" value="">
                     </div>                
                 </div>
-                <div id="erroNome"><?php isset($erros['nome']) ? print_r($erros['nome']) : NULL; ?></div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="mensagem">Data de Nascimento:</label>
+                    <label class="control-label col-sm-2" for="name">Tipo de Funcionario:</label>
                     <div class="col-sm-5">
-                        <input type="date" class="form-control" name="bday" max="<?= $now = date('y-m-d') ?>" min="1900-01-01">
+                        <input type="text" class="form-control" id="tipoFuncionario" name="tipoFuncionario" placeholder="Medico, Recepcao" value="">
                     </div>
                 </div>
-                <div class="form-check col-sm-4 ">
-                    <span id="genero">Genero:</span>
-                    <label>
-                        <input type="radio" id="M" name="radio" value="M" checked="<?= ($generos == 'M') ? TRUE : FALSE ?>">
-                        <span class="label-text">Masculino</span>
-                    </label>
-                </div>
-                <div class="form-check col-sm-2">
-                    <label>
-                        <input type="radio" id="F" name="radio" value="F" checked="<?= ($generos == 'F') ? FALSE : TRUE ?>">
-                        <span class="label-text">Feminino</span>
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="name">Morada:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" id="morada" name="morada" value="<?= (isset($morada)) ? $morada : ''; ?>">
-                    </div>
-                </div>
-                <div id="erroMorada"><?php isset($erros['morada']) ? print_r($erros['morada']) : NULL; ?></div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-3">
                         <button id="submicao" type="submit" name="enviar" class="btn btn-default">Submit</button>
