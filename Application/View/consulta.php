@@ -1,5 +1,5 @@
 <?php
-require_once (realpath(dirname( __FILE__ )) . '/../../Config.php');
+require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
 use Config as Conf;    
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ use Config as Conf;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
-    <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileR.css' ?>" type="text/css" rel="stylesheet">
+    <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileM.css' ?>" type="text/css" rel="stylesheet">
 
     <title>MedCare Consultas</title>
 </head>

@@ -10,7 +10,7 @@ class Config {
     const IMAGES_FOLDER = '/Images/';
     
     const SGBD_HOST_NAME = 'localhost';
-    const SGBD_DATABASE_NAME = 'paw_demo';
+    const SGBD_DATABASE_NAME = 'medcare';
     const SGBD_USERNAME = 'root';
     const SGBD_PASSWORD = '';
     
