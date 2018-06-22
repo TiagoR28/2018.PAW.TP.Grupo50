@@ -1,6 +1,8 @@
 <?php
 require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
-use Config as Conf;    
+use Config as Conf;   
+
+require_once (Conf::getApplicationvalidarPath() . 'validarConsulta.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +34,7 @@ use Config as Conf;
             <div class="form-group">
                 <label class="control-label col-sm-2" for="numberProcess">Numero do Processo:</label>
                 <div class="col-sm-5">
-                    <input type="int" class="form-control" id="numeroProcesso" min="1" max="999999" placeholder="123456">
+                    <input type="int" class="form-control" id="numeroProcesso" min="1" max="999999" placeholder="123456" name="id">
                 </div>
             </div>
             <div class="form-group">
@@ -73,12 +75,13 @@ use Config as Conf;
             <div class="form-group">
                 <label class="control-label col-sm-2" for="obs">Observações:</label>
                 <div class="col-sm-5">
-                    <textarea rows="5" class="form-control" id="obs"></textarea>
+                    <textarea rows="5" class="form-control" id="obs" name="obs"></textarea>
                 </div>
             </div>
+            <div id="erroObs"><?= print_r($erros['obs']); ?></div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-3">
-                    <button id="submicao" type="submit" class="btn btn-default">Submit</button>
+                    <button id="submicao" type="submit" name="enviar" class="btn btn-default">Submit</button>
                 </div>
             </div>
 

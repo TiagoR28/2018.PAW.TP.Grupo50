@@ -3,7 +3,7 @@ require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
 
 use Config as Conf;
 
-require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
+require_once (Conf::getApplicationvalidarPath() . 'validarEntrada.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,13 +34,13 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
             <div class="form-group">
                 <label class="control-label col-sm-2" for="name">Nome do Utente:</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="nome" placeholder="Insira o Nome">
+                    <input type="text" class="form-control" id="nome" placeholder="Insira o Nome" name="nome">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="numberProcess">Numero do Processo:</label>
                 <div class="col-sm-5">
-                    <input type="int" class="form-control" id="numeroProcesso" min="1" max="999999" placeholder="123456">
+                    <input type="int" class="form-control" id="numeroProcesso" min="1" max="999999" placeholder="123456" name="id">
                 </div>
             </div>
             <div class="form-group">
