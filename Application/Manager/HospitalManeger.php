@@ -37,12 +37,4 @@ class HospitalManager extends MyDataAccessPDO{
             throw $e;
         }
     }
-    
-    public function createHospital(Hospital $obj){
-        try{    
-            $this->insert(self::SQL_TABLE_NAME, $obj->convertObjectToArray());
-        }catch(Exception $e){
-            throw $e;
-        }            
-    }
 }

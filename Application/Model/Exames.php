@@ -45,8 +45,8 @@ class Exames {
      
 
     public function convertObjectToArray(){
-        $data = array(  'idmedico' => $this->getidmedico(), 
-                        'idconsulta' => $this->getidconsulta(),
+        $data = array(  'idMedico' => $this->getidmedico(), 
+                        'idConsulta' => $this->getidconsulta(),
                         'tipo' => $this->gettipo(),
                         'observacoes' => $this->getobservacoes());
                                

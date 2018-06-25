@@ -45,6 +45,6 @@ if (isset($validar)) {
     if ($count == 0) {
         $maneger = new FuncionarioManager();
         $model = new Funcionario();
-        $maneger->createFuncionario($model->createObject(3, $nome, $tipo, md5($pass), $genero, $morada));
+        $maneger->createFuncionario($model->createObject(NULL, $nome, $tipo, md5($pass), $genero, $morada));
     }
 }
