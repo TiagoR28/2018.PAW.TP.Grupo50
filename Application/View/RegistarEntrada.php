@@ -32,20 +32,14 @@ require_once (Conf::getApplicationvalidarPath() . 'validarEntrada.php');
         <h1>REGISTAR ENTRADA</h1>
         <form class="form-horizontal" action="" method="GET">
             <div class="form-group">
-                <label class="control-label col-sm-2" for="name">Nome do Utente:</label>
+                <label class="control-label col-sm-2" for="name">Numero do Utente:</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="nome" placeholder="Insira o Nome" name="nome">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="numberProcess">Numero do Processo:</label>
-                <div class="col-sm-5">
-                    <input type="int" class="form-control" id="numeroProcesso" min="1" max="999999" placeholder="123456" name="id">
+                    <input type="text" class="form-control" id="nome" placeholder="Insira o Nome" name="utente">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-3">
-                    <button id="submicao" type="submit" class="btn btn-default">Submit</button>
+                    <button id="submicao" type="submit" name="enviar" class="btn btn-default">Submit</button>
                 </div>
             </div>
 

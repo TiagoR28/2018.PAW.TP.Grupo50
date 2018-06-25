@@ -1,95 +1,123 @@
 <?php
-require_once (realpath(dirname( __FILE__ )) . '/../../Config.php');
-use Config as Conf;    
+
+require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
+
+use Config as Conf;
 
 class Consultas {
-    
+
     private $Id;
     private $nome;
     private $medico;
+    private $func;
     private $estado;
     private $entrada;
     private $saida;
     private $limiteespera;
     private $idHospital;
-    
-    public function getId(){
+
+    function getId() {
         return $this->Id;
     }
-    
-    public function getNome(){
+
+    function getNome() {
         return $this->nome;
-    }    
-    
-    public function getestado(){
+    }
+
+    function getMedico() {
+        return $this->medico;
+    }
+
+    function getFunc() {
+        return $this->func;
+    }
+
+    function getEstado() {
         return $this->estado;
-    }    
-    public function getentrada(){
+    }
+
+    function getEntrada() {
         return $this->entrada;
+    }
 
-    }   public function getsaida(){
+    function getSaida() {
         return $this->saida;
+    }
 
-    }   public function getlimiteespera(){
+    function getLimiteespera() {
         return $this->limiteespera;
+    }
 
-    }   public function getidHospital(){
+    function getIdHospital() {
         return $this->idHospital;
-    }   
-    public function setId($value){
-        $this->Id = $value;        
     }
-    
-    public function setNome($value){     
-        $this->nome = $value;
-    }
-    
-    public function setestado($value){      
-        $this->estado = $value;
-    }
-    public function setentrada($value){      
-        $this->entrada = $value;
-    }    
-    public function setsaida($value){      
-        $this->saida = $value;
-    }
-    public function setlimiteespera($value){      
-        $this->limiteespera = $value;
-    }      
-    public function setidHospital($value){      
-        $this->idHospital = $value;
-    }  
-    
 
-    
-    public function convertObjectToArray(){
-        $data = array(  'Id' => $this->getId(), 
-                        'nome' => $this->getNome(),
-                        'estado' => $this->getestado(), 
-                        'entrada' => $this->getentrada(),
-                        'saida' => $this->getsaida(),
-                        'limiteespera' => $this->getlimiteespera(),
-                        'idHospital' => $this->getidHospital()); 
-        
+    function setId($Id) {
+        $this->Id = $Id;
+    }
+
+    function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    function setMedico($medico) {
+        $this->medico = $medico;
+    }
+
+    function setFunc($func) {
+        $this->func = $func;
+    }
+
+    function setEstado($estado) {
+        $this->estado = $estado;
+    }
+
+    function setEntrada($entrada) {
+        $this->entrada = $entrada;
+    }
+
+    function setSaida($saida) {
+        $this->saida = $saida;
+    }
+
+    function setLimiteespera($limiteespera) {
+        $this->limiteespera = $limiteespera;
+    }
+
+    function setIdHospital($idHospital) {
+        $this->idHospital = $idHospital;
+    }
+
+    public function convertObjectToArray() {
+        $data = array('Id' => $this->getId(),
+            'nome' => $this->getNome(),
+            'idFunc' => $this->getFunc(),
+            'estado' => $this->getestado(),
+            'entrada' => $this->getentrada(),
+            'saida' => $this->getsaida(),
+            'limiteespera' => $this->getlimiteespera(),
+            'idHospital' => $this->getidHospital());
+
         return $data;
     }
-    
-    public static function convertArrayToObject(Array &$data){
-        return self::createObject($data['Id'], $data['nome'], $data['estado'],$data['entrada'],$data['saida'],$data['limiteespera'],$data['idHospital']);
-    }    
-    
-    public static function createObject($id, $nome, $estado, $entrada, $saida, $limiteespera, $idHospital){
+
+    public static function convertArrayToObject(Array &$data) {
+        return self::createObject($data['Id'], $data['nome'], $data['idFunc'], $data['estado'], $data['entrada'], $data['saida'], $data['limiteespera'], $data['idHospital']);
+    }
+
+    public static function createObject($id, $nome, $func, $estado, $entrada, $saida, $limiteespera, $idHospital) {
         $obj = new Consultas();
+
         $obj->setId($id);
         $obj->setNome($nome);
-        $obj->setObservacoes($estado);
-        $obj->setNome($entrada);
-        $obj->setNome($saida);
-        $obj->setNome($limiteespera);
-        $obj->setNome($idHospital);   
+        $obj->setFunc($func);
+        $obj->setEstado($estado);
+        $obj->setEntrada($entrada);
+        $obj->setSaida($saida);
+        $obj->setLimiteespera($limiteespera);
+        $obj->setIdHospital($idHospital);
 
-
-        
         return $obj;
     }
+
 }

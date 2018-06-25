@@ -38,7 +38,7 @@ class ConsultaManager extends MyDataAccessPDO{
         }
     }
     
-    public function createConsulta(Consulta $obj){
+    public function createConsulta(Consultas $obj){
         try{    
             $this->insert(self::SQL_TABLE_NAME, $obj->convertObjectToArray());
         }catch(Exception $e){
