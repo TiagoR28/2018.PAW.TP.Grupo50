@@ -1,88 +1,92 @@
 <?php
-require_once (realpath(dirname( __FILE__ )) . '/../../Config.php');
-use Config as Conf;    
+
+require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
+
+use Config as Conf;
 
 class Funcionario {
-    
+
     private $id;
     private $nome;
     private $tipo;
     private $password;
     private $genero;
     private $morada;
-    
-    public function getId(){
+
+    function getId() {
         return $this->id;
     }
-    
-    public function getNome(){
+
+    function getNome() {
         return $this->nome;
-    }    
-    
-    public function gettipo(){
+    }
+
+    function getTipo() {
         return $this->tipo;
-    }  
-    
-    public function getPassword(){
+    }
+
+    function getPassword() {
         return $this->password;
-    }  
+    }
 
-    public function getGenero(){
+    function getGenero() {
         return $this->genero;
-    } 
+    }
 
-    public function getMorada(){
+    function getMorada() {
         return $this->morada;
-    } 
-    
-    public function setId($value){        
-        $this->id = $value;        
     }
-    
-    public function setNome($value){        
-        $this->nome = $value;
+
+    function setId($id) {
+        $this->id = $id;
     }
-    
-    public function settipo($value){        
-        $this->tipo = $value;
-    }    
 
-    public function setPassword($value){        
-        $this->password = $value;
+    function setNome($nome) {
+        $this->nome = $nome;
     }
-    
-    public function setGenero($value){        
-        $this->genero = $value;
-    }   
 
-    public function setMorada($value){        
-        $this->morada = $value;
-    }   
+    function setTipo($tipo) {
+        $this->tipo = $tipo;
+    }
 
-    public function convertObjectToArray(){
-        $data = array(  'id' => $this->getId(), 
-                        'nome' => $this->getNome(),
-                        'tipo' => $this->gettipo(),
-                        'password' => $this->getPassword(),
-                        'genero' => $this->getGenero(),
-                        'morada' => $this->getMorada());        
-        
+    function setPassword($password) {
+        $this->password = $password;
+    }
+
+    function setGenero($genero) {
+        $this->genero = $genero;
+    }
+
+    function setMorada($morada) {
+        $this->morada = $morada;
+    }
+
+    public function convertObjectToArray() {
+        $data = array('id' => $this->getId(),
+            'nome' => $this->getNome(),
+            'tipoFunc' => $this->gettipo(),
+            'password' => $this->getPassword(),
+            'genero' => $this->getGenero(),
+            'morada' => $this->getMorada());
+
         return $data;
     }
-    
-    public static function convertArrayToObject(Array &$data){
+
+    public static function convertArrayToObject(Array &$data) {
         return self::createObject($data['id'], $data['nome'], $data['tipoFunc'], $data['password'], $data['genero'], $data['morada']);
-    }    
-    
-    public static function createObject($id, $nome, $tipo, $password, $genero, $morada){
+    }
+
+    public static function createObject($id, $nome, $tipo, $password, $genero, $morada) {
         $Funcionario = new Funcionario();
+
         $Funcionario->setId($id);
         $Funcionario->setNome($nome);
-        $Funcionario->settipo($tipo);
+        $Funcionario->setTipo($tipo);
         $Funcionario->setPassword($password);
         $Funcionario->setGenero($genero);
         $Funcionario->setMorada($morada);
-        
+
         return $Funcionario;
     }
+
 }
