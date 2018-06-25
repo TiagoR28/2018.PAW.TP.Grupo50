@@ -14,7 +14,7 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
         <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileR.css' ?>" type="text/css" rel="stylesheet">
-        
+
         <title>MedCare Adicionar Utente</title>
     </head>
 
@@ -32,6 +32,13 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
         <section>
             <h1>ADICIONAR UTENTE</h1>
             <form class="form-horizontal" action="" method="GET">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="nUtente">Numero de Utente:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="nUtente" name ="nUtente" placeholder="Insira o numero de utente" value="<?= (isset($nome)) ? $nome : ''; ?>">
+                    </div>                
+                </div>
+                <div id="erroNome"><?php isset($erros['nome']) ? print_r($erros['nome']) : NULL; ?></div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Nome:</label>
                     <div class="col-sm-5">

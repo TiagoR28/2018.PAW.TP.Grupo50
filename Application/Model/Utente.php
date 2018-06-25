@@ -4,7 +4,7 @@ use Config as Conf;
 
 class Utente {
     
-    private $id;
+    public $id;
     private $nome;
     private $idade;
     private $genero;
@@ -66,6 +66,7 @@ class Utente {
     
     public static function createObject($id, $nome, $idade, $genero, $morada){
         $Utente = new Utente();
+        
         $Utente->setId($id);
         $Utente->setNome($nome);
         $Utente->setIdade($idade);

@@ -73,6 +73,17 @@ class Validations {
         if ($cont != 1) {
             $erro = 'O campo é obrigatorio';
         }
+        
+        return $erro;
     }
 
+    public static function validateInteger($valor, $size) {
+        $erro = NULL;
+        
+        if (strlen($valor) != $size) {
+            $erro = 'O campo deve ter um tamanho de ' . $size . ' numeros';
+        }
+        
+        return $erro;
+    }
 }
