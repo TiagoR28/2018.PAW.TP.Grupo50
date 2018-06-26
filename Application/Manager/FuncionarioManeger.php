@@ -38,6 +38,14 @@ class FuncionarioManager extends MyDataAccessPDO{
         }
     }
     
+    public function getFuncionariosByNome($nome){
+        try{
+            return $this->getRecords(self::SQL_TABLE_NAME, array('nome' => $nome));
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+    
     public function createFuncionario(Funcionario $obj){
         try{    
             $this->insert(self::SQL_TABLE_NAME, $obj->convertObjectToArray());
