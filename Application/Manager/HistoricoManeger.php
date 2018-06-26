@@ -13,6 +13,26 @@ require_once (Conf::getApplicationDatabasePath() . 'MyDataAccessPDO.php');
 class HistoricoManeger extends MyDataAccessPDO{
     const SQL_TABLE_NAME = 'historico';
     
+    public function filtrarUtentesByDepartamento($data, $idFunc, $convertRecordToObject = false){
+        try{
+            $results = $this->getRecords('departamento AS d JOIN historico as h ON d.Id = h.idDepartamento Join consulta AS c ON h.idConsulta = c.Id'
+                                        , array('entradaDep' => $data, 'idFuncionario' => $idFunc), NULL);
+        }catch(Exception $e){
+            throw $e;
+        }
+              
+        $list = array();
+        if ($convertRecordToObject){
+            foreach($results AS $rec){
+                // Estamos a assumir que existe um relacionamento entre os atributos do array e os atributos da classe                    
+                $list[$rec['id']] = Student::convertArrayToObject($rec);   
+            }
+        }else{
+            $list = $results;
+        }
+        
+        return $list;
+    }
     
     public function getUtentesByEstado($id){
         try{
@@ -23,12 +43,12 @@ class HistoricoManeger extends MyDataAccessPDO{
         }
     }
         
-    public function getStudentsByCourse($courseID){
+    public function CountUtentesByDepartamento($idDepa, $idFunc){
         try{
-            return $this->getRecords(self::SQL_TABLE_NAME, array('courseID' => $courseID));
+            return $this->getRecords('departamento AS d JOIN historico as h ON d.Id = h.idDepartamento Join consulta AS c ON h.idConsulta = c.Id', array('idDepartamento' => $idDepa, 'idFuncionario' => $idFunc));
         }catch(Exception $e){
             throw $e;
-        }            
+        }
     }
     
     public function createStudent(Student $obj){
