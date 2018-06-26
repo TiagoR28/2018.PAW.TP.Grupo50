@@ -45,7 +45,7 @@ class HistoricoManeger extends MyDataAccessPDO{
         
     public function CountUtentesByDepartamento($idDepa, $idFunc){
         try{
-            return $this->getRecords('departamento AS d JOIN historico as h ON d.Id = h.idDepartamento Join consulta AS c ON h.idConsulta = c.Id', array('idDepartamento' => $idDepa, 'idFuncionario' => $idFunc));
+            return $this->getRecords('departamento AS d JOIN historico as h ON d.Id = h.idDepartamento Join consulta AS c ON h.idConsulta = c.Id JOIN utente AS u ON u.id = c.idNome', array('idDepartamento' => $idDepa, 'idFuncionario' => $idFunc));
         }catch(Exception $e){
             throw $e;
         }

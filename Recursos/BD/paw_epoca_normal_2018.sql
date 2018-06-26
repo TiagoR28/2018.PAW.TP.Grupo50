@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Jun-2018 às 15:50
+-- Generation Time: 26-Jun-2018 às 19:39
 -- Versão do servidor: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -29,14 +29,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `consulta` (
-  `id` int(11) NOT NULL,
-  `nomeId` int(11) NOT NULL,
-  `medicoId` int(11) NOT NULL,
-  `estado` enum('verde','amarelo','vermelho','espera','internado','alta','transferido') NOT NULL,
-  `entrada` datetime NOT NULL,
-  `saida` datetime NOT NULL,
+  `Id` int(11) NOT NULL,
+  `idNome` int(11) NOT NULL,
+  `idFunc` int(11) NOT NULL,
+  `estado` enum('Vermelho','Verde','Amarelo','Espera','internado','alta','transferido') DEFAULT NULL,
+  `entrada` date NOT NULL,
+  `saida` date DEFAULT NULL,
+  `limiteespera` date DEFAULT NULL,
   `idHospital` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `consulta`
+--
+
+INSERT INTO `consulta` (`Id`, `idNome`, `idFunc`, `estado`, `entrada`, `saida`, `limiteespera`, `idHospital`) VALUES
+(1, 1234567890, 1, 'Vermelho', '2018-06-19', '2018-06-20', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -50,6 +58,13 @@ CREATE TABLE `departamento` (
   `observacoes` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `departamento`
+--
+
+INSERT INTO `departamento` (`Id`, `nome`, `observacoes`) VALUES
+(1, 'Cardiovascular', 'Departamento responsável por realizar todos exames');
+
 -- --------------------------------------------------------
 
 --
@@ -59,9 +74,16 @@ CREATE TABLE `departamento` (
 CREATE TABLE `exames` (
   `idMedico` int(11) NOT NULL,
   `idConsulta` int(11) NOT NULL,
-  `tipo` enum('Cardio','','','') NOT NULL,
-  `observacoes` varchar(100) DEFAULT NULL
+  `tipo` enum('cardio','gerais','respiratorios') NOT NULL,
+  `observacoes` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `exames`
+--
+
+INSERT INTO `exames` (`idMedico`, `idConsulta`, `tipo`, `observacoes`) VALUES
+(3, 1, 'cardio', 'OLA');
 
 -- --------------------------------------------------------
 
@@ -72,10 +94,19 @@ CREATE TABLE `exames` (
 CREATE TABLE `funcionario` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `tipoFunc` enum('Recepcao','Medico','Admin','') NOT NULL,
-  `genero` char(1) NOT NULL,
+  `tipoFunc` enum('Recepcao','Medico','Admin') NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `genero` enum('M','F') NOT NULL,
   `morada` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`id`, `nome`, `tipoFunc`, `password`, `genero`, `morada`) VALUES
+(3, 'Teresa Freitas1', 'Medico', '81dc9bdb52d04dc20036dbd8313ed055', 'F', 'Rua xau e adeus '),
+(4, 'Luis Silva', 'Medico', '81dc9bdb52d04dc20036dbd8313ed055', 'M', 'ASDenjd');
 
 -- --------------------------------------------------------
 
@@ -86,9 +117,18 @@ CREATE TABLE `funcionario` (
 CREATE TABLE `historico` (
   `idDepartamento` int(11) NOT NULL,
   `idConsulta` int(11) NOT NULL,
-  `entrada` datetime NOT NULL,
-  `saida` datetime NOT NULL
+  `idFuncionario` int(11) NOT NULL,
+  `entradaDep` datetime NOT NULL,
+  `saidaDep` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `historico`
+--
+
+INSERT INTO `historico` (`idDepartamento`, `idConsulta`, `idFuncionario`, `entradaDep`, `saidaDep`) VALUES
+(1, 1, 0, '2018-06-05 00:00:00', '2018-06-29 00:00:00'),
+(1, 1, 3, '2018-06-13 00:00:00', '2018-06-29 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -102,6 +142,13 @@ CREATE TABLE `hospital` (
   `observacoes` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `hospital`
+--
+
+INSERT INTO `hospital` (`id`, `nome`, `observacoes`) VALUES
+(1, 'Hospital São Mamede', 'Hospital de São Mamede, capaz de atender todo o tipo de paciente');
+
 -- --------------------------------------------------------
 
 --
@@ -109,12 +156,21 @@ CREATE TABLE `hospital` (
 --
 
 CREATE TABLE `utente` (
-  `id` int(11) NOT NULL,
+  `id` varchar(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `idade` date NOT NULL,
   `genero` char(1) NOT NULL,
   `morada` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `utente`
+--
+
+INSERT INTO `utente` (`id`, `nome`, `idade`, `genero`, `morada`) VALUES
+('1234567890', 'Hugo Napoleão', '2018-06-14', 'M', 'Guimarães'),
+('17352846927', 'Tiago', '1995-06-03', 'M', 'Paços Ferreira'),
+('21345678909', 'Zé Pedro', '1992-02-01', 'M', 'Joane');
 
 --
 -- Indexes for dumped tables
@@ -124,10 +180,7 @@ CREATE TABLE `utente` (
 -- Indexes for table `consulta`
 --
 ALTER TABLE `consulta`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `nomeId` (`nomeId`),
-  ADD KEY `medicoId` (`medicoId`),
-  ADD KEY `idHospital` (`idHospital`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `departamento`
@@ -136,18 +189,10 @@ ALTER TABLE `departamento`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `exames`
---
-ALTER TABLE `exames`
-  ADD KEY `idConsulta` (`idConsulta`),
-  ADD KEY `idMedico` (`idMedico`);
-
---
 -- Indexes for table `funcionario`
 --
 ALTER TABLE `funcionario`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `tipoFunc` (`tipoFunc`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `historico`
@@ -169,23 +214,24 @@ ALTER TABLE `utente`
   ADD PRIMARY KEY (`id`);
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Limitadores para a tabela `consulta`
+-- AUTO_INCREMENT for table `consulta`
 --
 ALTER TABLE `consulta`
-  ADD CONSTRAINT `consulta_ibfk_1` FOREIGN KEY (`nomeId`) REFERENCES `utente` (`id`),
-  ADD CONSTRAINT `consulta_ibfk_2` FOREIGN KEY (`medicoId`) REFERENCES `funcionario` (`id`),
-  ADD CONSTRAINT `consulta_ibfk_3` FOREIGN KEY (`idHospital`) REFERENCES `hospital` (`id`);
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Limitadores para a tabela `exames`
+-- AUTO_INCREMENT for table `funcionario`
 --
-ALTER TABLE `exames`
-  ADD CONSTRAINT `exames_ibfk_1` FOREIGN KEY (`idConsulta`) REFERENCES `consulta` (`id`),
-  ADD CONSTRAINT `exames_ibfk_2` FOREIGN KEY (`idMedico`) REFERENCES `funcionario` (`id`);
+ALTER TABLE `funcionario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
 
 --
 -- Limitadores para a tabela `historico`

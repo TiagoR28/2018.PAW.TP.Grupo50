@@ -22,7 +22,9 @@ use Config as Conf;
         <div class="navbar-header">
           <img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . 'mRFd2kaT_400x400.png' ?>" alt="LOGO"></img>
         </div>
-        <button onclick="location.href='login.html';" class="btn btn-danger navbar-btn" href="../login.html">LogIn</button>
+          <button onclick="location.href='<?= Conf::
+          getApplicationViewPath() . 'login.php'?>';" class="btn btn-danger navbar-btn" href="<?= Conf::
+          getApplicationViewPath() . 'login.php'?>">LogIn</button>
       </div>
     </nav>
   </header>

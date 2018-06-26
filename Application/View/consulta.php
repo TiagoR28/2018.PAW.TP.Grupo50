@@ -24,7 +24,7 @@ require_once (Conf::getApplicationvalidarPath() . 'validarConsulta.php');
                 <div class="navbar-header">
                     <img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . 'mRFd2kaT_400x400.png' ?>" alt="LOGO"></img>
                 </div>
-                <button onclick="location.href='index.html';" class="btn btn-danger navbar-btn">LogOut</button>
+                <button onclick="location.href='<?= Conf::getApplicationViewPath() . 'index.php'?>';" class="btn btn-danger navbar-btn">LogOut</button>
             </div>
         </nav>
     </header>
@@ -78,7 +78,7 @@ require_once (Conf::getApplicationvalidarPath() . 'validarConsulta.php');
                     <textarea rows="5" class="form-control" id="obs" name="obs"></textarea>
                 </div>
             </div>
-            <div id="erroObs"><?= print_r($erros['obs']); ?></div>
+            <div id="erroObs"><?= isset($erros['obs']) ? print_r($erros['obs']) : NULL; ?></div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-3">
                     <button id="submicao" type="submit" name="enviar" class="btn btn-default">Submit</button>

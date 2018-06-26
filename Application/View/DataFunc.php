@@ -5,6 +5,7 @@ use Config as Conf;
 
 require_once (Conf::getApplicationManagerPath() . 'HistoricoManeger.php');
 require_once (Conf::getApplicationModelPath() . 'historico.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <!--
@@ -19,10 +20,14 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        if (isset($_SESSION['username']) === TRUE) {
         $maneger = new HistoricoManeger();
         $list = $maneger->filtrarUtentesByDepartamento('2018-06-13 00:00:00', 3);
         
         print_r(count($list));
+        } else {
+            print_r('Faça Login');
+        }
         ?>
     </body>
 </html>

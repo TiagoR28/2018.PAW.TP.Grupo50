@@ -26,14 +26,14 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
                 </div>
                 <div class ="nav">
                     <ul>
-                        <li class ="column-1"><a href ="./triagem.html">Adicionar Funcionario</a></li>
-                        <li class ="column-1"><a href ="./registarEntrada.html">Remover Funcionario</a></li>     
-                        <li class ="column-1"><a href ="./registarEntrada.html">Editar Funcionario</a></li>  
-                        <li class ="column-1"><a href ="./registarEntrada.html">Adicionar Doentes</a></li>  
-                        <li class ="column-1"><a href ="./registarEntrada.html">Adicionar Exames</a></li>                     
+                        <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'triagem.php'?>">Adicionar Funcionario</a></li>
+                        <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php'?>">Remover Funcionario</a></li>     
+                        <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php'?>">Editar Funcionario</a></li>  
+                        <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php'?>">Adicionar Doentes</a></li>  
+                        <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php'?>">Adicionar Exames</a></li>                     
                     </ul>
                 </div>        
-                <button onclick="location.href='index.html';" class="btn btn-danger navbar-btn">LogOut</button>
+                <button onclick="location.href='<?= Conf::getApplicationViewPath() . 'index.php'?>';" class="btn btn-danger navbar-btn">LogOut</button>
             </div>
         </nav>
     </header>

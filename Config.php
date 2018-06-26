@@ -49,4 +49,8 @@ class Config {
     public static function getApplicationImagePath(){
         return '../img/';
     }
+    
+    public static function getApplicationViewPath(){
+        return '../View/';
+    }
 }

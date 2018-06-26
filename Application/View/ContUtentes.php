@@ -5,6 +5,7 @@ use Config as Conf;
 
 require_once (Conf::getApplicationManagerPath() . 'HistoricoManeger.php');
 require_once (Conf::getApplicationModelPath() . 'historico.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <!--
@@ -19,10 +20,19 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        if (isset($_SESSION['username']) === TRUE) {
         $maneger = new HistoricoManeger();
         $list = $maneger->CountUtentesByDepartamento(1, 3);
-        
         print_r(count($list));
+        foreach ($list as $value) {
+            ?> 
+        <p>Nome Utente: <?=$value['17'] ?></p>
+        <?php
+        }
+        } else {
+            print_r('Faça Login');
+        }
+        
         ?>
     </body>
 </html>

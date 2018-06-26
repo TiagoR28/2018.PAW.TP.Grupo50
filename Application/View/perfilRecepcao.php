@@ -26,12 +26,12 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
                 </div>
                 <div class ="nav">
                     <ul>
-                        <li class ="column-1"><a href ="./adicionarUtente.html">Adicionar Utente</a></li>
-                        <li class ="column-1"><a href ="./registarEntrada.html">Registar Entrada</a></li>                        
+                        <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'adicionarUtente.php'?>">Adicionar Utente</a></li>
+                        <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php'?>">Registar Entrada</a></li>                        
                     </ul>
                 </div>
         
-                <button onclick="location.href='index.html';" class="btn btn-danger navbar-btn">LogOut</button>
+                <button onclick="location.href='<?= Conf::getApplicationViewPath() . 'index.php'?>';" class="btn btn-danger navbar-btn">LogOut</button>
                 
             </div>
         </nav>

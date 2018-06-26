@@ -28,7 +28,7 @@ foreach ($results as $r) {
 
 if ($results != null && $passe == $r['password']) {
     session_start();
-    $_SESSION['nome'] = $r['nome'];
+    $_SESSION['username'] = $r['nome'];
     echo "<script>alert('Sessao Iniciada');</script>";
 }
 //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=http://localhost/PAW_EpR_Grupo17/index.php">';

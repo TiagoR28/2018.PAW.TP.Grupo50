@@ -25,7 +25,7 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
                     <div class="navbar-header">
                         <img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . 'mRFd2kaT_400x400.png' ?>" alt="LOGO">
                     </div>
-                    <button onclick="location.href = 'index.html';" class="btn btn-danger navbar-btn">LogOut</button>
+                    <button onclick="location.href='<?= Conf::getApplicationViewPath() . 'index.php'?>';" class="btn btn-danger navbar-btn">LogOut</button>
                 </div>
             </nav>
         </header>
