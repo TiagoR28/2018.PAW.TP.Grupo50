@@ -30,6 +30,19 @@ class ConsultaManager extends MyDataAccessPDO{
         return $list;
     }
     
+    public function getRelatorioByID($id){
+        try{
+            return $this->getRecords('departamento AS d JOIN historico as h ON d.Id = h.idDepartamento '
+                    . 'Join consulta AS c ON h.idConsulta = c.Id '
+                    . 'JOIN hospital AS hos ON hos.id = c.idHospital '
+                    . 'JOIN utente AS u ON U.id = c.idNome '
+                    . 'JOIN exames AS e ON e.idConsulta = c.Id '
+                    . 'JOIN funcionario AS f ON f.id = e.idMedico', array('idNome' => $id));
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+    
     public function getConsultaByID($id){
         try{
             return $this->getRecords(self::SQL_TABLE_NAME, array('id' => $id));
