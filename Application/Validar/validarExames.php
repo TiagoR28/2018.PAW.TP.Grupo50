@@ -4,6 +4,7 @@ require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
 
 use Config as Conf;
 
+require_once (Conf::getApplicationManagerPath() . 'ConsultaManeger.php');
 require_once (Conf::getApplicationManagerPath() . 'ExameManeger.php');
 require_once (Conf::getApplicationModelPath() . 'Exames.php');
 require_once (Conf::getApplicationUtilsPath() . 'Validations.php');
@@ -15,7 +16,7 @@ $validar = filter_input(INPUT_GET, 'enviar');
 if (isset($validar)) {
 
     $erros = array();
-    $generos = ['M', 'F'];
+    $tiposE = ['cardio', 'gerais', 'respiratorios'];
     $type = INPUT_GET;
     $count = 0;
     
@@ -25,7 +26,15 @@ if (isset($validar)) {
     $obs = filter_input($type, 'obs', FILTER_SANITIZE_MAGIC_QUOTES);
     print_r($exame);
     
-    $erros['consulta'] = MyValidations::validateString($obs, 0, 500);
+    $erros['obs'] = MyValidations::validateString($obs, 0, 500);
+    $erros['TE'] = MyValidations::validateRadio($exame, $tiposE);
+    
+    $CM = new ConsultaManager();
+    $aux = $CM->getConsultaByID($consulta);
+    if (empty($aux)) {
+        $erros['erroProc'] = 'O processo não foi encontrado';
+        $count++;
+    }
     
     foreach ($erros as $key => $value) {
          if (!empty($value)) {
@@ -34,8 +43,8 @@ if (isset($validar)) {
     } 
 
     if ($count == 0) {
-//        $UM = new UtenteManager();
-//        $U = new Utente();
-//        $UM->createUtente($U->createObject($id, $nome, $data, $genero, $morada));
+        $maneger = new ExameManager();
+        $model = new Exames();
+        $maneger->createExame($model->createObject($medico, $consulta, $exame, $obs));
     }
 }

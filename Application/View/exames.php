@@ -45,20 +45,20 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarExames.php');
                     <span id="estado">Exames:</span>
                     <div class="checkbox checkbox-inline">
                         <label>
-                            <input type="checkbox" id="exameX" name="tipoExame" value="exameX">
-                            <span class="label-text">exameX</span>
+                            <input type="radio" id="exameX" name="tipoExame" value="cardio">
+                            <span class="label-text">cardio</span>
                         </label>
                     </div>
                     <div class="checkbox checkbox-inline">
                         <label>
-                            <input type="checkbox" id="exameY" name="tipoExame" value="exameY">
-                            <span class="label-text">exameY</span>
+                            <input type="radio" id="exameY" name="tipoExame" value="gerais">
+                            <span class="label-text">gerais</span>
                         </label>
                     </div>
                     <div class="checkbox checkbox-inline">
                         <label>
-                            <input type="checkbox" id="exameZ" name="tipoExame" value="exameZ">
-                            <span class="label-text">exameZ</span>
+                            <input type="radio" id="exameZ" name="tipoExame" value="respiratorios">
+                            <span class="label-text">respiratorios</span>
                         </label>
                     </div>
                 </div>

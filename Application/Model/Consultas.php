@@ -90,7 +90,7 @@ class Consultas {
 
     public function convertObjectToArray() {
         $data = array('Id' => $this->getId(),
-            'nome' => $this->getNome(),
+            'idNome' => $this->getNome(),
             'idFunc' => $this->getFunc(),
             'estado' => $this->getestado(),
             'entrada' => $this->getentrada(),

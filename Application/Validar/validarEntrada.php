@@ -10,7 +10,6 @@ require_once (Conf::getApplicationManagerPath() . 'UtenteManeger.php');
 
 require_once (Conf::getApplicationUtilsPath() . 'Validations.php');
 
-use Validations as MyValidations;
 
 $validar = filter_input(INPUT_GET, 'enviar');
 
