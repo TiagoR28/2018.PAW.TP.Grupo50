@@ -11,7 +11,7 @@ class ConsultaManager extends MyDataAccessPDO{
     
     public function getConsultas($convertRecordToObject = false){
         try{
-            $results = $this->getRecords(self::SQL_TABLE_NAME, null,
+            $results = $this->getRecords('consulta AS c JOIN utente AS u ON C.idNome = u.id', null,
                                             null);
         }catch(Exception $e){
             throw $e;
@@ -21,7 +21,7 @@ class ConsultaManager extends MyDataAccessPDO{
         if ($convertRecordToObject){
             foreach($results AS $rec){
                 // Estamos a assumir que existe um relacionamento entre os atributos do array e os atributos da classe                    
-                $list[$rec['id']] = Utente::convertArrayToObject($rec);   
+                $list[$rec['Id']] = Consultas::convertArrayToObject($rec);   
             }
         }else{
             $list = $results;
@@ -50,6 +50,8 @@ class ConsultaManager extends MyDataAccessPDO{
             throw $e;
         }
     }
+    
+    
     
     public function createConsulta(Consultas $obj){
         try{    
