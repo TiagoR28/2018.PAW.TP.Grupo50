@@ -46,7 +46,7 @@ class Validations {
         $format = 'Y-m-d';
         $min = DateTime::createFromFormat($format, '1900-01-01');
         $aux = DateTime::createFromFormat($format, $date);
-        $now = date($format);
+        $now = date_default_timezone_set('Europe/Lisbon');
         if (!$aux instanceof DateTime) {
             $erro = 'O campo é obrigatorio';
         } else {

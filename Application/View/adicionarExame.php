@@ -15,7 +15,7 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
         <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
         <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileR.css' ?>" type="text/css" rel="stylesheet">
         
-        <title>MedCare Adicionar Exame</title>
+        <title>Adicionar Ação</title>
     </head>
 
     <body>
@@ -30,8 +30,16 @@ require_once (Conf::getApplicationvalidarPath() . 'ValidarUtente.php');
             </nav>
         </header>
         <section>
-            <h1>ADICIONAR EXAME</h1>
+            <h1>ADICIONAR Ação</h1>
             <form class="form-horizontal" action="" method="GET">
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">Decrição:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="nomeExame" name ="nomeExame" placeholder="Insira o tipo de exame" value="">
+                    </div>                
+                </div>
+                
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Nome do Exame:</label>
                     <div class="col-sm-5">
