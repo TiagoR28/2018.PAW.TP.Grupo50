@@ -4,7 +4,7 @@ require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
 
 use Config as Conf;
 
-class Consultas {
+class Processo {
 
     private $Id;
     private $IdUser;
