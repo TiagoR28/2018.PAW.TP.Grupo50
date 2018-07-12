@@ -41,7 +41,7 @@ session_start();
                                     <?php 
                                     if ($value['Tipo'] == 'administrador') {
                                     ?>
-                                    <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php' ?>">Adicionar Utilizador</a></li>
+                                    <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'adicionarUser.php' ?>">Adicionar Utilizador</a></li>
                                     
                                     <?php 
                                     }

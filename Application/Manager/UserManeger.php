@@ -38,7 +38,7 @@ class UserManeger extends MyDataAccessPDO {
         }
     }
 
-    public function createUsername(User $obj) {
+    public function createUser(User $obj) {
         try {
             $this->insert(self::SQL_TABLE_NAME, $obj->convertObjectToArray());
         } catch (Exception $e) {
@@ -46,7 +46,7 @@ class UserManeger extends MyDataAccessPDO {
         }
     }
 
-    public function updateStudent(User $obj) {
+    public function updateUser(User $obj) {
         try {
             $this->update(self::SQL_TABLE_NAME, $obj->convertObjectToArray(), array('Username' => $obj->getUsername()));
         } catch (Exception $e) {

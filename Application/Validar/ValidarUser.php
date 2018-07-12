@@ -3,13 +3,13 @@ require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
 
 use Config as Conf;
 
-require_once (Conf::getApplicationManagerPath() . 'FuncionarioManeger.php');
+require_once (Conf::getApplicationManagerPath() . 'UserManeger.php');
 require_once (Conf::getApplicationModelPath() . 'User.php');
 require_once (Conf::getApplicationUtilsPath() . 'Validations.php');
 
 use Validations as MyValidations;
 
-$validar = filter_input(INPUT_GET, 'enviar');
+$validar = filter_input(INPUT_POST, 'enviar');
 
 if (isset($validar)) {
 
@@ -17,6 +17,8 @@ if (isset($validar)) {
     $tiposF = ['assistente', 'administrador'];
     $type = INPUT_POST;
     $count = 0;
+    $Man = new UserManeger();
+    $Mod = new User();
     
     $username = filter_input($type, 'username', FILTER_SANITIZE_MAGIC_QUOTES);
     $nome = filter_input($type, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);    
@@ -30,6 +32,11 @@ if (isset($validar)) {
     $erros['pass'] = MyValidations::validateString($pass, 3, 20);
     $erros['comfPass'] = MyValidations::validateString($pass, 3, 20);
     
+    $temp = $Man->getUserByUsername($username);
+    
+    if ($temp != NULL) {
+        $erros['username'] = 'Este username já foi usado';
+    }
     
     if ($pass != $pass2) {
         $erros['pass'] = 'As passwords não coincidem';
@@ -41,10 +48,8 @@ if (isset($validar)) {
          }
     } 
 
-    if ($count == 0) {        
-//        $maneger = new FuncionarioManager();
-//        $model = new Users();
-//        $maneger->createFuncionario($model->createObject(NULL, $nome, $tipo, md5($pass), $genero, $morada));
-        echo 'User Criado com sucesso';
+    if ($count == 0) {   
+        $Man->createUser($Mod->createObject($username, md5($pass), $nome, $tipo));
+        echo "<script>alert('O Utilizador foi criado com sucesso');</script>";
     }
 }
