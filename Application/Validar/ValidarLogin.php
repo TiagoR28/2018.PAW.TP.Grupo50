@@ -29,11 +29,11 @@ if (isset($login)) {
         $list[$r['Username']] = $F->convertArrayToObject($r);
     }
 
-    if ($results != null && $passe1 == $r['Password']) {
+    if ($results != null && $passe == $r['Password']) {
         session_start();
         $_SESSION['username'] = $r['Username'];
         echo "<script>alert('Sessao Iniciada');</script>";
-        //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=http://localhost/PAW_EpR_Grupo17/index.php">';
+        echo '<META HTTP-EQUIV="Refresh" Content="0; URL=http://localhost/DataAccessPDO/Application/View/perfilUser.php">';
     } else {
         echo "<script>alert('Creedenciais não encontradas');</script>";
     }

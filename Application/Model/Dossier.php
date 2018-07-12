@@ -29,34 +29,18 @@ class Dossier {
     }    
     
     public function setId($value){
-        if (!MyValidations::isString($value)){
-            throw new Exception ('tem que ser uma String...');
-        }        
-        
         $this->Id = $value;        
     }
     
     public function setNome($value){
-        if (!MyValidations::isString($value)){
-            throw new Exception ('tem que ser uma String...');
-        }
-        
         $this->Nome = $value;
     }
     
     public function setNascimento($value){
-        if (!MyValidations::isString($value)){
-            throw new Exception ('tem que ser uma String...');
-        }
-        
         $this->Nascimento = $value;
     }    
     
-    public function setContactoEnc($value){
-        if (!MyValidations::isString($value)){
-            throw new Exception ('tem que ser uma String...');
-        }
-        
+    public function setContactoEnc($value){               
         $this->ContatoEnc = $value;
     }    
     
@@ -80,7 +64,7 @@ class Dossier {
         $dossier->setId($Id);
         $dossier->setNome($Nome);
         $dossier->setNascimento($Nascimento);
-        $dossier->setContatoEnc($ContatoEnc);
+        $dossier->setContactoEnc($ContatoEnc);
         
         return $dossier;
     }

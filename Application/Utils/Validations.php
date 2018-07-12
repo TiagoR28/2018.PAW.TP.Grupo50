@@ -46,11 +46,11 @@ class Validations {
         $format = 'Y-m-d';
         $min = DateTime::createFromFormat($format, '1900-01-01');
         $aux = DateTime::createFromFormat($format, $date);
-        $now = date_default_timezone_set('Europe/Lisbon');
+        $now = DateTime::createFromFormat($format, '2000-07-30');
         if (!$aux instanceof DateTime) {
             $erro = 'O campo é obrigatorio';
         } else {
-            if ($aux < $min || $aux < $now) {
+            if ($date > $min || $date < $now) {
                 $erro = 'O campo deve estar entre o ano 1900 e a data autal';
             }
         }

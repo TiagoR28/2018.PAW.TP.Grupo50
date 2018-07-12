@@ -4,8 +4,8 @@ require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
 
 use Config as Conf;
 
-require_once (Conf::getApplicationManagerPath() . 'UtenteManeger.php');
-require_once (Conf::getApplicationModelPath() . 'Utente.php');
+require_once (Conf::getApplicationManagerPath() . 'DossierManeger.php');
+require_once (Conf::getApplicationModelPath() . 'Dossier.php');
 require_once (Conf::getApplicationUtilsPath() . 'Validations.php');
 
 use Validations as MyValidations;
@@ -33,9 +33,9 @@ if (isset($validar)) {
     }
     
     if ($count == 0) {
-//        $UM = new UtenteManager();
-//        $U = new Utente();
-//        $UM->createUtente($U->createObject($id, $nome, $data, $genero, $morada));
-        echo 'O dossier foi criado com sucesso';    // TODO: Apagar esta linha ou mudar para alert 
+        $Man = new DossierManeger();
+        $Mod = new Dossier();
+        $Man->createDossier($Mod->createObject(Null, $nome, $data, $contacto));
+        echo "<script>alert('O dossier foi criado com sucesso');</script>";  
     }
 }
