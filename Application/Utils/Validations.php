@@ -38,8 +38,7 @@ class Validations {
     /**
      * 
      * @param type $date
-     * @return string
-     * @note Tem bugs 
+     * @return string 
      */
     public static function validateDate($date) {
         $erro = NULL;
@@ -77,6 +76,12 @@ class Validations {
         return $erro;
     }
 
+    /**
+     * 
+     * @param type $valor
+     * @param type $size
+     * @return string
+     */
     public static function validateInteger($valor, $size) {
         $erro = NULL;
         

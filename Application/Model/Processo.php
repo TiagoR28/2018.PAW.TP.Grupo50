@@ -81,7 +81,7 @@ class Processo {
     }
 
     public static function createObject($Id, $IdUser, $Problema, $Estado, $Criacao, $Limite) {
-        $obj = new Consultas();
+        $obj = new Processo();
 
         $obj->setId($Id);
         $obj->setIdUser($IdUser);

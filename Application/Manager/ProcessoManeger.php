@@ -5,7 +5,7 @@
 require_once (Conf::getApplicationDatabasePath() . 'MyDataAccessPDO.php');
 require_once (Conf::getApplicationModelPath() . 'Processo.php');
 
-class ProcessoManeger {
+class ProcessoManeger extends MyDataAccessPDO {
     const SQL_TABLE_NAME = 'processo';
     
     public function getProcesso($convertRecordToObject = false){

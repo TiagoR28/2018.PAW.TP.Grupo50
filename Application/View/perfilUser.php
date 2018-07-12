@@ -37,7 +37,7 @@ session_start();
                                     <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'adicionarDossier.php' ?>">Adicionar Dossier</a></li>
                                     <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php' ?>">Listagem</a></li>     
                                     <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php' ?>">Editar Meus Dados</a></li>  
-                                    <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php' ?>">Adicionar Processo</a></li>  
+                                    <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'AdicinarProcesso.php' ?>">Adicionar Processo</a></li>  
                                     <?php 
                                     if ($value['Tipo'] == 'administrador') {
                                     ?>
