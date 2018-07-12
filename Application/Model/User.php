@@ -57,7 +57,7 @@ class User {
     }
 
     public static function createObject($Username, $Password, $Nome, $Tipo) {
-        $obj = new Users();
+        $obj = new User();
         $obj->setUsername($Username);
         $obj->setPassword($Password);
         $obj->setNome($Nome);

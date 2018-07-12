@@ -11,7 +11,7 @@ class UserManeger extends MyDataAccessPDO {
 
     const SQL_TABLE_NAME = 'users';
 
-    public function getStudents($convertRecordToObject = false) {
+    public function getUser($convertRecordToObject = false) {
         try {
             $results = $this->getRecords(self::SQL_TABLE_NAME, null, NULL);
         } catch (Exception $e) {

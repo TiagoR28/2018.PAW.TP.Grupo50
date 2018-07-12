@@ -10,7 +10,7 @@ class Config {
     const IMAGES_FOLDER = '/Images/';
     
     const SGBD_HOST_NAME = 'localhost';
-    const SGBD_DATABASE_NAME = 'paw_epoca_normal_2018';
+    const SGBD_DATABASE_NAME = 'recurso';
     const SGBD_USERNAME = 'root';
     const SGBD_PASSWORD = '';
     
