@@ -35,8 +35,7 @@ session_start();
                             <div class ="nav">
                                 <ul>
                                     <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'adicionarDossier.php' ?>">Adicionar Dossier</a></li>
-                                    <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php' ?>">Listagem</a></li>     
-                                    <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'registarEntrada.php' ?>">Editar Meus Dados</a></li>  
+                                    <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'Listagems.php' ?>">Pesquisa</a></li>  
                                     <li class ="column-1"><a href ="<?= Conf::getApplicationViewPath() . 'AdicinarProcesso.php' ?>">Adicionar Processo</a></li>  
                                     <?php 
                                     if ($value['Tipo'] == 'administrador') {
@@ -53,10 +52,7 @@ session_start();
                     </nav>
                 </header>        
                 <div class="profile">
-                    <img src="<?= Conf::getApplicationImagePath() . 'avatar.png' ?>" class="logo">
-                    <p>UserName: <?= print_r($value['Username']); ?></p>
-                    <p>Nome: <?= print_r($value['Nome']); ?></p>
-                    <p>Tipo de Utilizador: <?= print_r($value['Tipo']); ?></p>
+                    
                 </div>
                 <?php
             }

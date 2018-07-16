@@ -53,4 +53,8 @@ class Config {
     public static function getApplicationViewPath(){
         return '../View/';
     }
+    
+    public static function getApplicationJavaScriptPath(){
+        return '../JavaScript/';
+    }
 }
