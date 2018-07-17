@@ -43,35 +43,31 @@ session_start();
                     </nav>
                 </header>        
                 <div id="input">
-                    <form class="form-horizontal" id="formContagem">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="inicio">Data de inicio:</label>
-                            <div class="col-sm-5">
-                                <input type="date" class="form-control" name ="inicio" >
-                            </div>                
-                        </div>                    
+                    <div id="formContagem">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="inicio">Data de inicio:</label>
+                                <div class="col-sm-5">
+                                    <input type="date" class="form-control" id="inicio" >
+                                </div>                
+                            </div>                    
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="fim">Data de fim:</label>
-                            <div class="col-sm-5">
-                                <input type="date" class="form-control" name="fim">
-                            </div>
-                        </div>                    
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="Contacto">Estado do processo:</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" name="estado">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-3">
-                                <button type="submit" id="contagem" class="btn btn-default">Procurar</button>
-                            </div>
-                        </div>
-                    </form>
-                    
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="fim">Data de fim:</label>
+                                <div class="col-sm-5">
+                                    <input type="date" class="form-control" id="fim">
+                                </div>
+                            </div>                    
+                            Estado do processo:
+                            <select id="status">
+                                <option value="" selected="" ></option>
+                                <option value="aberto">Aberto</option>
+                                <option value="acompanhamento">Acompanhamento</option>
+                                <option value="encerrado">Encerrado</option>
+                            </select>
+                        </form>
+                        <button class="btn btn-default" id="Filtar">Procurar</button>
+                    </div>
                     <form class="form-horizontal" action="" method="POST" id="aluno" >                           
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="Contacto">Nome do aluno:</label>
@@ -80,13 +76,13 @@ session_start();
                             </div>
                         </div>
                     </form>
-                    
+
                 </div>
-        <div id="output">
-            <div id="resulCP"></div>
-            <div id="resulFA"></div>
-            <div id="resulMG"></div>
-        </div>
+                <div id="output">
+                    <div id="resulCP"></div>
+                    <div id="resulFA"></div>
+                    <div id="resulMG"></div>
+                </div>
                 <?php
             }
         } else {

@@ -36,6 +36,14 @@ class ProcessoManeger extends MyDataAccessPDO {
         }
     }
     
+    public function getProcessoByEstado($estado){
+        try{
+            return $this->getRecords(self::SQL_TABLE_NAME, array('Estado' => $estado));
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+    
     public function createProcesso(Processo $obj){
         try{    
             $this->insert(self::SQL_TABLE_NAME, $obj->convertObjectToArray());
