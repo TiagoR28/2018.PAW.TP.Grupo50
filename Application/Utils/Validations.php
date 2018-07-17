@@ -45,12 +45,15 @@ class Validations {
         $format = 'Y-m-d';
         $min = DateTime::createFromFormat($format, '1900-01-01');
         $aux = DateTime::createFromFormat($format, $date);
-        $now = DateTime::createFromFormat($format, '2000-07-30');
+        $now = date('Y/m/d');
         if (!$aux instanceof DateTime) {
             $erro = 'O campo é obrigatorio';
         } else {
-            if ($date > $min || $date < $now) {
-                $erro = 'O campo deve estar entre o ano 1900 e a data autal';
+            if ($date > $min) {
+                $erro = 'O campo deve ser maior do que o ano 1900';
+            }
+            if ($aux < $now) {
+                $erro = 'O campo deve ser menor do que o ano atual';
             }
         }
         return $erro;

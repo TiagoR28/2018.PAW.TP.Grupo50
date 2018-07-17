@@ -57,4 +57,8 @@ class Config {
     public static function getApplicationJavaScriptPath(){
         return '../JavaScript/';
     }
+    
+    public static function getApplicationGraficoPath(){
+        return '../phplot-6.2/';
+    }
 }

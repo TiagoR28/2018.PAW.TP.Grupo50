@@ -3,7 +3,6 @@ require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
 
 use Config as Conf;
 
-//require_once (Conf::getApplicationvalidarPath() . 'ValidarDossier.php');
 require_once (Conf::getApplicationvalidarPath() . 'ValidarLogin.php');
 session_start();
 ?>

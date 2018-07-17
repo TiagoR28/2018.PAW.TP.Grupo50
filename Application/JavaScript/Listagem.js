@@ -5,7 +5,8 @@ $(document).ready(eventos);
 
 function eventos() {
     $('#FA').click(filtrarAluno);
-    $('#CP').click(contagemProcesso); 
+    $('#CP').click(contagemProcesso);
+    $('#MG').click(carregarGrafico);
 }
 
 function contagemProcesso() {
@@ -57,4 +58,16 @@ function esconder() {
     $('#resulMG').css('display', 'none');
     $('#resulFA').css('display', 'none');
     $('#resulCP').css('display', 'none');
+}
+
+function carregarGrafico () {
+    esconder();
+    
+    $('#resulMG').css('display', 'block');
+    $('#resulMG').ready(function () {       
+       $.get(folder + 'MostrarGrafico.php', null, function (data, estado) {
+           console.log(estado);
+           $('#resulMG').html(data);
+       });
+    });
 }

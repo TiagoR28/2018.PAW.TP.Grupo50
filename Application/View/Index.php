@@ -30,7 +30,7 @@ use Config as Conf;
   </header>
 
   <section>
-    <h1>MEDCARE</h1>
+    <h1>Assistente Social</h1>
 
 
   </section>

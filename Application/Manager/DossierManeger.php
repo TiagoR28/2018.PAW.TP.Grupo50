@@ -54,7 +54,7 @@ class DossierManeger extends MyDataAccessPDO {
     
     public function updateDossier(Dossier $obj){
         try{
-            $this->update(self::SQL_TABLE_NAME, $obj->convertObjectToArray(), array('Id' => $obj->getStudentID()));
+            $this->update(self::SQL_TABLE_NAME, $obj->convertObjectToArray(), array('Id' => $obj->getId()));
         }catch(Exception $e){
             throw $e;
         }            

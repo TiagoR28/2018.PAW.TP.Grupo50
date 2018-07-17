@@ -4,9 +4,9 @@ require_once (realpath(dirname(__FILE__)) . '/../../Config.php');
 
 use Config as Conf;
 
-require_once (Conf::getApplicationManagerPath() . 'ConsultaManeger.php');
-require_once (Conf::getApplicationModelPath() . 'Consultas.php');
-require_once (Conf::getApplicationManagerPath() . 'UtenteManeger.php');
+require_once (Conf::getApplicationManagerPath() . 'AcccoesManeger.php');
+require_once (Conf::getApplicationModelPath() . 'Accoes.php');
+
 
 require_once (Conf::getApplicationUtilsPath() . 'Validations.php');
 
@@ -25,7 +25,7 @@ if (isset($validar)) {
     $IdProc = 1;        // TODO: implementar sessoes
     $Descricao = filter_input($type, "descricao", FILTER_SANITIZE_MAGIC_QUOTES);
     $Solucao = filter_input($type, "tipo", FILTER_SANITIZE_MAGIC_QUOTES);
-    $data = date_default_timezone_set('Europe/Lisbon');
+    $data = date('Y/m/d');
     
     $erros['descricao'] = MyValidations::validateString($Descricao, 1, 500);
     $erros['TS'] = MyValidations::validateRadio($Solucao, $tipoS);

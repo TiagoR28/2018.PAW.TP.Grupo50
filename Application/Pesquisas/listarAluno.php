@@ -8,9 +8,9 @@ require_once (Conf::getApplicationManagerPath() . 'DossierManeger.php');
 
 $man = new DossierManeger();
 $nome = filter_input(INPUT_POST, 'aluno');
-$header = array('Nome', 'Solução', 'Data');
-$headerDossier = array('Nome', 'Data Nascimento', 'Contacto Encarregado');
-
+$header = array('Nome', 'Solução', 'Data', '');
+$headerDossier = array('Nome', 'Data Nascimento', 'Contacto Encarregado', '');
+$caminho = "http://localhost/DataAccessPDO/Application/View/adicionarDossier.php?id=";
 if (isset($nome) == TRUE) {
     $resul = $man->getListAlunos($nome);
 
@@ -30,6 +30,7 @@ if (isset($nome) == TRUE) {
         echo '<td>' . $valor['Nome'] . '</td>';
         echo '<td>' . $valor['Solucao'] . '</td>';
         echo '<td>' . $valor['Data'] . '</td>';
+        echo '<td>' . '<a href=" http://localhost/DataAccessPDO/Application/View/AtualizarDossier.php?id=' . $valor['Id'] .'"><button type="button">Editar</button></a>' . '</td>';
         echo '</tr>';
     }
 
@@ -54,6 +55,7 @@ if ($nome == '') {
         echo '<td>' . $valor['Nome'] . '</td>';
         echo '<td>' . $valor['Nascimento'] . '</td>';
         echo '<td>' . $valor['ContatoEnc'] . '</td>';
+        echo '<td>' . '<a href=" http://localhost/DataAccessPDO/Application/View/AtualizarDossier.php?id=' . $valor['Id'] .'"><button type="button">Editar</button></a>' . '</td>';
         echo '</tr>';
     }
 
