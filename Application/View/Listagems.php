@@ -14,6 +14,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
         <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileA.css' ?>" type="text/css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="<?= Conf::getApplicationJavaScriptPath() . 'Listagem.js' ?>"></script>
         <title>Pesquisa</title>
     </head>
@@ -42,7 +43,7 @@ session_start();
                     </nav>
                 </header>        
                 <div id="input">
-                    <form class="form-horizontal" action="" method="POST" id="formContagem" style="display: none;">
+                    <form class="form-horizontal" id="formContagem">
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="inicio">Data de inicio:</label>
                             <div class="col-sm-5">
@@ -66,22 +67,16 @@ session_start();
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-3">
-                                <button type="submit" name="contagem" class="btn btn-default">Submit</button>
+                                <button type="submit" id="contagem" class="btn btn-default">Procurar</button>
                             </div>
                         </div>
                     </form>
                     
-                    <form class="form-horizontal" action="" method="POST" id="aluno" style="display: none;">                           
+                    <form class="form-horizontal" action="" method="POST" id="aluno" >                           
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="Contacto">Nome do aluno:</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="nome">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-3">
-                                <button type="submit" name="contagem" class="btn btn-default">Procurar</button>
+                                <input type="text" class="form-control" id="nome">
                             </div>
                         </div>
                     </form>

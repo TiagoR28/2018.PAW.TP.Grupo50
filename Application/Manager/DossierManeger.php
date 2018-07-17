@@ -36,6 +36,14 @@ class DossierManeger extends MyDataAccessPDO {
         }
     }
     
+    public function getListAlunos($nome) {
+        try {
+            return $this->getRecords('dossier AS d JOIN accoes AS a ON a.IdDossier = d.Id', array('Nome' => $nome));
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+    
     public function createDossier(Dossier $obj){
         try{    
             $this->insert(self::SQL_TABLE_NAME, $obj->convertObjectToArray());

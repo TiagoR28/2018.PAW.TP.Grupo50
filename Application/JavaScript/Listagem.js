@@ -1,24 +1,50 @@
-document.addEventListener("DOMContentLoaded", eventos, false);
+var folder = '../Pesquisas/';
+
+$(document).ready(esconder);
+$(document).ready(eventos);
 
 function eventos() {
-    document.getElementById('FA').addEventListener('click', filtrarAluno, false);
-    document.getElementById('CP').addEventListener('click', contagemProcesso, false);    
+    $('#FA').click(filtrarAluno);
+    $('#CP').click(contagemProcesso); 
 }
 
 function contagemProcesso() {
     esconder();
-    var form = document.getElementById('formContagem').style.display = 'block';
+    $('#formContagem').css('display', 'block');
+    
+    carregarProcesso();
+}
+
+function carregarProcesso() {
+    $('#contagem').click(function () {
+        console.log('ola');
+    });
 }
 
 function filtrarAluno() {
     esconder();
-    var form = document.getElementById('aluno').style.display = 'block';
+    $('#aluno').css('display', 'block');
+    
+    carregarAluno();
+}
+
+function carregarAluno() {
+    $('#resulCP').css('display', 'block');
+    $('#nome').keyup(function () {
+       var name =  $('#nome').val();
+       $.post(folder + 'listarAluno.php', {
+           aluno : name
+       }, function (data, status) {
+            console.log(status);
+            $('#resulCP').html(data);
+        });
+    });
 }
 
 function esconder() {
-    document.getElementById('formContagem').style.display = 'none';
-    document.getElementById('aluno').style.display = 'none';
-    document.getElementById('resulMG').style.display = 'none';
-    document.getElementById('resulFA').style.display = 'none';
-    document.getElementById('resulCP').style.display = 'none';
+    $('#formContagem').css('display', 'none');
+    $('#aluno').css('display', 'none');
+    $('#resulMG').css('display', 'none');
+    $('#resulFA').css('display', 'none');
+    $('#resulCP').css('display', 'none');
 }
