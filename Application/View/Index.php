@@ -10,7 +10,7 @@ use Config as Conf;
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
-  <link href="<?= Conf::getApplicationCSSPath() . 'styleIndex.css' ?>" type="text/css" rel="stylesheet">
+  <link href="<?= Conf::getApplicationCSSPath() . 'styleInde.css' ?>" type="text/css" rel="stylesheet">
   <title>Assistencia Social</title>
 </head>
 
