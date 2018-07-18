@@ -36,10 +36,18 @@ class ProcessoManeger extends MyDataAccessPDO {
         }
     }
     
-    public function getHistoricoByID($id){
+    public function getHistoricoAccoesByID($id){
         try{
             return $this->getRecords('processo AS p JOIN accoes AS a ON p.IdPro = a.IdProc JOIN dossier as d ON '
                     . 'd.Id = a.IdDossier JOIN users AS u ON u.Username = p.IdUser', array('IdPro' => $id));
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+    
+    public function getHistoricoByID($id){
+        try{
+            return $this->getRecords('processo AS p JOIN users AS u ON u.Username = p.IdUser', array('IdPro' => $id));
         }catch(Exception $e){
             throw $e;
         }

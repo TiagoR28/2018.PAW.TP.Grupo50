@@ -24,8 +24,13 @@ session_start();
             $PM = new ProcessoManeger();
             $AM = new AcccoesManeger();
             $id = filter_input(INPUT_GET, 'id');
-            $vetor = $PM->getHistoricoByID($id);
             $accoes = $AM->getAccoesByIDProc($id);
+            if (count($accoes) > 0) {
+            $vetor = $PM->getHistoricoAccoesByID($id);
+            } else {
+                $vetor = $PM->getHistoricoByID($id);
+            }
+            
             foreach ($vetor as $value) {
                 ?>
                 <header>
@@ -50,9 +55,11 @@ session_start();
                         <p>Tipo de Problema: <?= $value['Problema'] ?></p>
                         <p>Estado do processo: <?= $value['Estado'] ?></p>
                         <p>Data Limite de resulução: <?= $value['Limite'] ?></p>  
-                        <p>Responsavel pelo processo: <?= $value['17'] ?></p>
+                        <p>Responsavel pelo processo: <?= $value['Nome'] ?></p>
                     </section>
-
+                    <?php
+                   if (count($accoes) > 0) {
+                    ?>
                     <section id="Dossier">
                         <p>Dados do dossente</p>
                         <p>Nome: <?= $value['Problema'] ?></p>
@@ -61,6 +68,7 @@ session_start();
                     </section>
 
                     <?php
+                   }
                 }
                 foreach ($accoes as $accao) {
                     ?>
