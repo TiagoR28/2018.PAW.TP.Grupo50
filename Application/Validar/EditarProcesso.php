@@ -61,11 +61,7 @@ if (isset($validar)) {
             $cont++;
         }
     }
-    print_r($limite);
-    echo '<br>';
-    print_r($prob);
-    echo '<br>';
-    print_r($estado);
+    
     if ($cont == 0) {
         $obj = $Mod->createObject($obj->getId(), $obj->getIdUser(), $prob, $estado, $obj->getCriacao(), $limite);
         $Man->updateProcesso($obj);

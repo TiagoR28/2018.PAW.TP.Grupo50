@@ -26,14 +26,14 @@ require_once (Conf::getApplicationvalidarPath() . 'validarProcesso.php');
                 <nav class="navbar navbar-tranparent">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a href="<?= Conf::getApplicationViewPath() . 'perfilUser.php' ?>"><img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . 'mRFd2kaT_400x400.png' ?>" alt="LOGO"></a>
+                            <a href="<?= Conf::getApplicationViewPath() . 'perfilUser.php' ?>"><img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . '37279481_10204770496458106_1157461924988846080_n.png' ?>" alt="LOGO"></a>
                         </div>
                         <button onclick="location.href = '<?= Conf::getApplicationViewPath() . 'index.php' ?>';" class="btn btn-danger navbar-btn">LogOut</button>
                     </div>
                 </nav>
             </header>
             <section>
-                <h1>Adicionar Problema</h1>
+                <h1>Adicionar Processo</h1>
                 <form class="form-horizontal" action="" method="POST">
 
                     <div class="form-group">

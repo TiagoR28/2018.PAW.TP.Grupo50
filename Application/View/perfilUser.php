@@ -32,7 +32,7 @@ session_start();
                     <nav class="navbar navbar-tranparent">
                         <div class="container-fluid">
                             <div class="navbar-header">
-                                <img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . 'mRFd2kaT_400x400.png' ?>" alt="LOGO"></img>
+                                <img class="navbar-brand" src="<?= Conf::getApplicationImagePath() . '37279481_10204770496458106_1157461924988846080_n.png' ?>" alt="LOGO"></img>
                             </div>
                             <div class ="nav">
                                 <ul>

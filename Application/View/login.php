@@ -13,7 +13,7 @@ require_once (Conf::getApplicationvalidarPath() . 'validarLogin.php');
 </head>
 <body>
     <div class="login-box">
-        <img src="<?= Conf::getApplicationImagePath() . 'mRFd2kaT_400x400.png' ?>" class="logo">
+        <img src="<?= Conf::getApplicationImagePath() . '37279481_10204770496458106_1157461924988846080_n.png' ?>" class="logo">
         <h1>LOGIN</h1>
         <form action="" method="POST">
             <p>Username</p>
