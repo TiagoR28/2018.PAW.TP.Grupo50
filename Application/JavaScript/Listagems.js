@@ -7,6 +7,7 @@ function eventos() {
     $('#FA').click(filtrarAluno);
     $('#CP').click(contagemProcesso);
     $('#MG').click(carregarGrafico);
+    $(document).ready(carregarAlerta());
 }
 
 function contagemProcesso() {
@@ -68,6 +69,15 @@ function carregarGrafico () {
        $.get(folder + 'MostrarGrafico.php', null, function (data, estado) {
            console.log(estado);
            $('#resulMG').html(data);
+       });
+    });
+}
+
+function carregarAlerta () {        
+    $('#alerta').ready(function () {       
+       $.get(folder + 'Alertas.php', null, function (data, estado) {
+           console.log(estado);
+           $('#alerta').html(data);
        });
     });
 }

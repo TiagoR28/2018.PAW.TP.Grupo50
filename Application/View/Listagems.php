@@ -14,7 +14,7 @@ session_start();
         <link href="<?= Conf::getApplicationBootstrapPath() . 'bootstrap.css' ?>" type="text/css" rel="stylesheet">
         <link href="<?= Conf::getApplicationCSSPath() . 'styleProfileA.css' ?>" type="text/css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="<?= Conf::getApplicationJavaScriptPath() . 'Listagem.js' ?>"></script>
+        <script src="<?= Conf::getApplicationJavaScriptPath() . 'Listagems.js' ?>"></script>
         <title>Pesquisa</title>
     </head>
     <body>
