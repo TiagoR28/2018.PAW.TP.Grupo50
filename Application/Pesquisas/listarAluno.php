@@ -10,7 +10,6 @@ $man = new DossierManeger();
 $nome = filter_input(INPUT_POST, 'aluno');
 $header = array('Nome', 'Solução', 'Data', '');
 $headerDossier = array('Nome', 'Data Nascimento', 'Contacto Encarregado', '');
-$caminho = "http://localhost/DataAccessPDO/Application/View/adicionarDossier.php?id=";
 if (isset($nome) == TRUE) {
     $resul = $man->getListAlunos($nome);
 

@@ -26,25 +26,28 @@ if (isset($validar)) {
     $nome = filter_input($type, 'nome', FILTER_SANITIZE_MAGIC_QUOTES);
     $contacto = filter_input($type, 'Contacto', FILTER_SANITIZE_STRING);
     $data = filter_input($type, 'bday', FILTER_SANITIZE_SPECIAL_CHARS);
+    $vetor = $Man->getDossierByID($id);
     
-    $obj = $Man->getDossierByID($id);
+    foreach ($vetor as $value) {
+        $obj = $Mod->convertArrayToObject($value);
+    }
 
-    if (isset($nome)) {
+    if (!empty($nome)) {
         $erros['nome'] = MyValidations::validateString($nome, 3, 50);
     } else {
-        $nome = $obj['Nome'];
+        $nome = $obj->getNome();
     }
 
-    if (isset($contacto)) {
+    if (!empty($contacto)) {
         $erros['Contacto'] = MyValidations::validateInteger($contacto, 9);
     } else {
-        $contacto = $obj['ContatoEnc'];
+        $contacto = $obj->getContatoEnc();
     }
     
-    if (isset($data)) {
+    if (!empty($data)) {
          $erros['bday'] = MyValidations::validateDate($data);
     } else {
-        $data = $obj['Nascimento'];
+        $data = $obj->getNascimento();
     }
 
     foreach ($erros as $key => $value) {
@@ -54,7 +57,6 @@ if (isset($validar)) {
     }
 
     if ($count == 0) {
-
         $Man->updateDossier($Mod->createObject($id, $nome, $data, $contacto));
         echo "<script>alert('O dossier foi alterado com sucesso');</script>";
     }

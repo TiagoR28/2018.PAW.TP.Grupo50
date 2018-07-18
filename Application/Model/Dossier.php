@@ -56,7 +56,7 @@ class Dossier {
     }
     
     public static function convertArrayToObject(Array &$data){
-        return self::createObject($data['Id'], $data['Nome'],  $data['Nascimento'] , $data['ContactoEnc']);
+        return self::createObject($data['Id'], $data['Nome'],  $data['Nascimento'] , $data['ContatoEnc']);
     }    
     
     public static function createObject($Id, $Nome, $Nascimento, $ContatoEnc){
