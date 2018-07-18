@@ -6,8 +6,7 @@ header {
 
 .navbar{
     margin-top: 2%;
-    width: 100%;
-    
+    width: 100%;    
 }
 
 .btn{
@@ -17,8 +16,7 @@ header {
     border-radius: 15 15 15 15;
     font-weight: bolder;
     background-color: #891B58;
-    border-color: #891B58;
-    
+    border-color: #891B58;    
 }
 
 .btn:hover{
@@ -63,10 +61,8 @@ header {
 a:link, a:visited {
     color: black;
     font: bold 120% caption;
-    text-decoration: none;
-    
-    display:inline-block;
-    
+    text-decoration: none;    
+    display:inline-block;    
     text-align: center;
 }
 
@@ -80,16 +76,12 @@ a:active {
     text-decoration: none;
 }
 
-
-
-
-.profile{
-    
+.profile{    
     color: white;   
     padding: 70px 30px;
-    clear: both;
-    
+    clear: both;    
 }
+
 .logo{
     width: 100px;
     height: 100px;
@@ -97,6 +89,7 @@ a:active {
     top: -50px;
     left: calc(50% - 50px);
 }
+
 p{
     color: black;
     margin: 0;
@@ -104,7 +97,6 @@ p{
     text-align: center;
     font-size: 22px;
 }
-
 
 section{
     text-align: center;

@@ -19,7 +19,7 @@ class ProcessoManeger extends MyDataAccessPDO {
         $list = array();
         if ($convertRecordToObject){
             foreach($results AS $rec){                
-                $list[$rec['Id']] = Processo::convertArrayToObject($rec);   
+                $list[$rec['IdPro']] = Processo::convertArrayToObject($rec);   
             }
         }else{
             $list = $results;
@@ -30,7 +30,16 @@ class ProcessoManeger extends MyDataAccessPDO {
     
     public function getProcessoByID($id){
         try{
-            return $this->getRecords(self::SQL_TABLE_NAME, array('Id' => $id));
+            return $this->getRecords(self::SQL_TABLE_NAME, array('IdPro' => $id));
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+    
+    public function getHistoricoByID($id){
+        try{
+            return $this->getRecords('processo AS p JOIN accoes AS a ON p.IdPro = a.IdProc JOIN dossier as d ON '
+                    . 'd.Id = a.IdDossier JOIN users AS u ON u.Username = p.IdUser', array('IdPro' => $id));
         }catch(Exception $e){
             throw $e;
         }
@@ -54,7 +63,7 @@ class ProcessoManeger extends MyDataAccessPDO {
     
     public function updateProcesso(Processo $obj){
         try{
-            $this->update(self::SQL_TABLE_NAME, $obj->convertObjectToArray(), array('Id' => $obj->getId()));
+            $this->update(self::SQL_TABLE_NAME, $obj->convertObjectToArray(), array('IdPro' => $obj->getId()));
         }catch(Exception $e){
             throw $e;
         }            
@@ -62,7 +71,7 @@ class ProcessoManeger extends MyDataAccessPDO {
 
     public function deleteProcesso(Processo $obj){
         try{
-            $this->delete(self::SQL_TABLE_NAME, array('Id' => $obj->getStudentID()));
+            $this->delete(self::SQL_TABLE_NAME, array('IdPro' => $obj->getStudentID()));
         }catch(Exception $e){
             throw $e;
         }

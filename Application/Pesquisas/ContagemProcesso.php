@@ -30,18 +30,12 @@ if (isset($estado) && isset($dataInicio) && isset($dataFim)) {
             
     foreach ($Lista as $key => $value) {
         if ($value["Criacao"] > $dataInicio && $value["Criacao"] < $dataFim) {
-            
-
-          
                 echo '<tr>';
                 echo '<td>' . $value['IdUser'] . '</td>';
                 echo '<td>' . $value['Problema'] . '</td>';
-                echo '<td>' . '<a href=" http://localhost/DataAccessPDO/Application/View/AtualizarProcesso.php?id=' . $value['Id'] .'"><button type="button">Editar</button></a>' . '</td>';
-                echo '<td>' . '<a href=" http://localhost/DataAccessPDO/Application/View/AtualizarProcesso.php?id=' . $value['Id'] .'"><button type="button">Detalhes</button></a>' . '</td>';
+                echo '<td>' . '<a href=" http://localhost/DataAccessPDO/Application/View/AtualizarProcesso.php?id=' . $value['IdPro'] .'"><button type="button">Editar</button></a>' . '</td>';
+                echo '<td>' . '<a href=" http://localhost/DataAccessPDO/Application/View/Historico.php?id=' . $value['IdPro'] .'"><button type="button">Detalhes</button></a>' . '</td>';
                 echo '</tr>';
-            
-
-            
         }
     }
     echo '</tbody></table>';

@@ -66,7 +66,7 @@ class Processo {
 
   
     public function convertObjectToArray() {
-        $data = array('Id' => $this->getId(),
+        $data = array('IdPro' => $this->getId(),
             'IdUser' => $this->getIdUser(),
             'Problema' => $this->getProblema(),
             'Estado' => $this->getEstado(),
@@ -77,7 +77,7 @@ class Processo {
     }
 
     public static function convertArrayToObject(Array &$data) {
-        return self::createObject($data['Id'], $data['IdUser'], $data['Problema'], $data['Estado'], $data['Criacao'], $data['Limite']);
+        return self::createObject($data['IdPro'], $data['IdUser'], $data['Problema'], $data['Estado'], $data['Criacao'], $data['Limite']);
     }
 
     public static function createObject($Id, $IdUser, $Problema, $Estado, $Criacao, $Limite) {

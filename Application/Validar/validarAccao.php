@@ -21,8 +21,8 @@ if (isset($validar)) {
     $tipoS = ['Reunioes', 'Pedidos', 'Encaminhamentos'];
     $count = 0;
 
-    $IdDossier = 1;     // TODO: implementar sessoes
-    $IdProc = 1;        // TODO: implementar sessoes
+    $IdDossier = filter_input(INPUT_GET, 'idDoss', FILTER_SANITIZE_MAGIC_QUOTES);    
+    $IdProc = filter_input(INPUT_GET, 'idPro', FILTER_SANITIZE_MAGIC_QUOTES);        
     $Descricao = filter_input($type, "descricao", FILTER_SANITIZE_MAGIC_QUOTES);
     $Solucao = filter_input($type, "tipo", FILTER_SANITIZE_MAGIC_QUOTES);
     $data = date('Y/m/d');
@@ -37,9 +37,9 @@ if (isset($validar)) {
     }
     
     if ($count == 0) {
-//        $CM = new ConsultaManager();
-//        $C = new Consultas();
-//        $CM->createConsulta($C->createObject(NULL, $nUtente, $idFunc, NULL, $entrada, NULL, NULL, $idHosp));        
+        $CM = new AcccoesManeger();
+        $C = new Accoes();
+        $CM->createAccoes($C->createObject($IdDossier, $IdProc, $Descricao, $data, $Solucao));        
     } 
     
 }
